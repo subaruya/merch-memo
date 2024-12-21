@@ -162,7 +162,7 @@ Googleカレンダーやスプレッドシートなど既存のツールによ�
 ### ER図
 [ER図初稿.Drawio](https://drive.google.com/file/d/14EQU2KHXEww5r9OSz41-ixTL3dV6aQyh/view?usp=sharing)
 
-[![Image from Gyazo](https://i.gyazo.com/c94ca5470c513eefd48de593b795add4.png)](https://gyazo.com/c94ca5470c513eefd48de593b795add4)
+[![Image from Gyazo](https://i.gyazo.com/57568bdd0298ef3c1673731426dd3ce3.png)](https://gyazo.com/57568bdd0298ef3c1673731426dd3ce3)
 
 ### 本サービスの概要（700文字以内）
 - 本サービスはキャラクターグッズの予約情報を管理するWebアプリです。
