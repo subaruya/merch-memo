@@ -159,4 +159,4 @@ Googleカレンダーやスプレッドシートなど既存のツールによ�
 
 
 ### ER図
-[![Image from Gyazo](https://i.gyazo.com/1c30c957d6eb70e373babae961ff6466.png)](https://gyazo.com/1c30c957d6eb70e373babae961ff6466)
+[![Image from Gyazo](https://i.gyazo.com/35892970ba3cc017fe64a84907d7925f.png)](https://gyazo.com/35892970ba3cc017fe64a84907d7925f)
