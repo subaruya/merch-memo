@@ -3,10 +3,17 @@ current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/websocket-driver-0.7.6/e
 creating Makefile
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241230-1-5h6cl2 sitelibdir\=./.gem.20241230-1-5h6cl2 clean
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/websocket-driver-0.7.6/ext/websocket-driver
 make DESTDIR\= sitearchdir\=./.gem.20241230-1-5h6cl2 sitelibdir\=./.gem.20241230-1-5h6cl2
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241229-1-qzia1s sitelibdir\=./.gem.20241229-1-qzia1s clean
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20241229-1-qzia1s sitelibdir\=./.gem.20241229-1-qzia1s
+>>>>>>> origin/main
 compiling websocket_mask.c
 websocket_mask.c: In function ‘Init_websocket_mask’:
 websocket_mask.c:26:6: warning: old-style function definition [-Wold-style-definition]
@@ -19,8 +26,16 @@ cc1: note: unrecognized command-line option ‘-Wno-constant-logical-operand’ 
 linking shared-object websocket_mask.so
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241230-1-5h6cl2 sitelibdir\=./.gem.20241230-1-5h6cl2 install
 /usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20241230-1-5h6cl2
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/websocket-driver-0.7.6/ext/websocket-driver
 make DESTDIR\= sitearchdir\=./.gem.20241230-1-5h6cl2 sitelibdir\=./.gem.20241230-1-5h6cl2 clean
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241229-1-qzia1s sitelibdir\=./.gem.20241229-1-qzia1s install
+/usr/bin/install -c -m 0755 websocket_mask.so ./.gem.20241229-1-qzia1s
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/websocket-driver-0.7.6/ext/websocket-driver
+make DESTDIR\= sitearchdir\=./.gem.20241229-1-qzia1s sitelibdir\=./.gem.20241229-1-qzia1s clean
+>>>>>>> origin/main

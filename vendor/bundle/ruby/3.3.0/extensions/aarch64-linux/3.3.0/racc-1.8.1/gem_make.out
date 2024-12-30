@@ -3,16 +3,31 @@ current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cpar
 creating Makefile
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241230-1-5xoi3p sitelibdir\=./.gem.20241230-1-5xoi3p clean
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
 make DESTDIR\= sitearchdir\=./.gem.20241230-1-5xoi3p sitelibdir\=./.gem.20241230-1-5xoi3p
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241229-1-pv4v2z sitelibdir\=./.gem.20241229-1-pv4v2z clean
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20241229-1-pv4v2z sitelibdir\=./.gem.20241229-1-pv4v2z
+>>>>>>> origin/main
 compiling cparse.c
 linking shared-object racc/cparse.so
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241230-1-5xoi3p sitelibdir\=./.gem.20241230-1-5xoi3p install
 /usr/bin/install -c -m 0755 cparse.so ./.gem.20241230-1-5xoi3p/racc
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
 make DESTDIR\= sitearchdir\=./.gem.20241230-1-5xoi3p sitelibdir\=./.gem.20241230-1-5xoi3p clean
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241229-1-pv4v2z sitelibdir\=./.gem.20241229-1-pv4v2z install
+/usr/bin/install -c -m 0755 cparse.so ./.gem.20241229-1-pv4v2z/racc
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/racc-1.8.1/ext/racc/cparse
+make DESTDIR\= sitearchdir\=./.gem.20241229-1-pv4v2z sitelibdir\=./.gem.20241229-1-pv4v2z clean
+>>>>>>> origin/main

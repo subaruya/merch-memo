@@ -3,16 +3,31 @@ current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptra
 creating Makefile
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241230-31-3dbo7m sitelibdir\=./.gem.20241230-31-3dbo7m clean
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
 make DESTDIR\= sitearchdir\=./.gem.20241230-31-3dbo7m sitelibdir\=./.gem.20241230-31-3dbo7m
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241229-31-xyi9b6 sitelibdir\=./.gem.20241229-31-xyi9b6 clean
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20241229-31-xyi9b6 sitelibdir\=./.gem.20241229-31-xyi9b6
+>>>>>>> origin/main
 compiling cruby.c
 linking shared-object skiptrace/internal/cruby.so
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241230-31-3dbo7m sitelibdir\=./.gem.20241230-31-3dbo7m install
 /usr/bin/install -c -m 0755 cruby.so ./.gem.20241230-31-3dbo7m/skiptrace/internal
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
 make DESTDIR\= sitearchdir\=./.gem.20241230-31-3dbo7m sitelibdir\=./.gem.20241230-31-3dbo7m clean
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241229-31-xyi9b6 sitelibdir\=./.gem.20241229-31-xyi9b6 install
+/usr/bin/install -c -m 0755 cruby.so ./.gem.20241229-31-xyi9b6/skiptrace/internal
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/bindex-0.8.1/ext/skiptrace
+make DESTDIR\= sitearchdir\=./.gem.20241229-31-xyi9b6 sitelibdir\=./.gem.20241229-31-xyi9b6 clean
+>>>>>>> origin/main

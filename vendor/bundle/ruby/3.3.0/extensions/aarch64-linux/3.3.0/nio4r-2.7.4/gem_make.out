@@ -13,10 +13,17 @@ checking for sys/resource.h... yes
 creating Makefile
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/nio4r-2.7.4/ext/nio4r
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241230-1-mz90sc sitelibdir\=./.gem.20241230-1-mz90sc clean
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/nio4r-2.7.4/ext/nio4r
 make DESTDIR\= sitearchdir\=./.gem.20241230-1-mz90sc sitelibdir\=./.gem.20241230-1-mz90sc
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241229-1-1qeqiw sitelibdir\=./.gem.20241229-1-1qeqiw clean
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/nio4r-2.7.4/ext/nio4r
+make DESTDIR\= sitearchdir\=./.gem.20241229-1-1qeqiw sitelibdir\=./.gem.20241229-1-1qeqiw
+>>>>>>> origin/main
 compiling bytebuffer.c
 bytebuffer.c: In function ‘Init_NIO_ByteBuffer’:
 bytebuffer.c:59:6: warning: old-style function definition [-Wold-style-definition]
@@ -361,8 +368,16 @@ compiling selector.c
 linking shared-object nio4r_ext.so
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/nio4r-2.7.4/ext/nio4r
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241230-1-mz90sc sitelibdir\=./.gem.20241230-1-mz90sc install
 /usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20241230-1-mz90sc
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/nio4r-2.7.4/ext/nio4r
 make DESTDIR\= sitearchdir\=./.gem.20241230-1-mz90sc sitelibdir\=./.gem.20241230-1-mz90sc clean
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241229-1-1qeqiw sitelibdir\=./.gem.20241229-1-1qeqiw install
+/usr/bin/install -c -m 0755 nio4r_ext.so ./.gem.20241229-1-1qeqiw
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/nio4r-2.7.4/ext/nio4r
+make DESTDIR\= sitearchdir\=./.gem.20241229-1-1qeqiw sitelibdir\=./.gem.20241229-1-1qeqiw clean
+>>>>>>> origin/main

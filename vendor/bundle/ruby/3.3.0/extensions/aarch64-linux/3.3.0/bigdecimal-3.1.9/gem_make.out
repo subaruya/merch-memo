@@ -26,17 +26,32 @@ checking for RB_WARN_CATEGORY_DEPRECATED in ruby.h... yes
 creating Makefile
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.9/ext/bigdecimal
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241230-1-11nscx sitelibdir\=./.gem.20241230-1-11nscx clean
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.9/ext/bigdecimal
 make DESTDIR\= sitearchdir\=./.gem.20241230-1-11nscx sitelibdir\=./.gem.20241230-1-11nscx
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241229-1-eswu4u sitelibdir\=./.gem.20241229-1-eswu4u clean
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.9/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20241229-1-eswu4u sitelibdir\=./.gem.20241229-1-eswu4u
+>>>>>>> origin/main
 compiling bigdecimal.c
 compiling missing.c
 linking shared-object bigdecimal.so
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.9/ext/bigdecimal
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241230-1-11nscx sitelibdir\=./.gem.20241230-1-11nscx install
 /usr/bin/install -c -m 0755 bigdecimal.so ./.gem.20241230-1-11nscx
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.9/ext/bigdecimal
 make DESTDIR\= sitearchdir\=./.gem.20241230-1-11nscx sitelibdir\=./.gem.20241230-1-11nscx clean
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241229-1-eswu4u sitelibdir\=./.gem.20241229-1-eswu4u install
+/usr/bin/install -c -m 0755 bigdecimal.so ./.gem.20241229-1-eswu4u
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/bigdecimal-3.1.9/ext/bigdecimal
+make DESTDIR\= sitearchdir\=./.gem.20241229-1-eswu4u sitelibdir\=./.gem.20241229-1-eswu4u clean
+>>>>>>> origin/main

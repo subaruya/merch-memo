@@ -3,17 +3,32 @@ current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/debug-1.10.0/ext/debug
 creating Makefile
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/debug-1.10.0/ext/debug
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241230-31-vzh7v9 sitelibdir\=./.gem.20241230-31-vzh7v9 clean
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/debug-1.10.0/ext/debug
 make DESTDIR\= sitearchdir\=./.gem.20241230-31-vzh7v9 sitelibdir\=./.gem.20241230-31-vzh7v9
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241229-31-bkoqwl sitelibdir\=./.gem.20241229-31-bkoqwl clean
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20241229-31-bkoqwl sitelibdir\=./.gem.20241229-31-bkoqwl
+>>>>>>> origin/main
 compiling debug.c
 compiling iseq_collector.c
 linking shared-object debug/debug.so
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/debug-1.10.0/ext/debug
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241230-31-vzh7v9 sitelibdir\=./.gem.20241230-31-vzh7v9 install
 /usr/bin/install -c -m 0755 debug.so ./.gem.20241230-31-vzh7v9/debug
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/debug-1.10.0/ext/debug
 make DESTDIR\= sitearchdir\=./.gem.20241230-31-vzh7v9 sitelibdir\=./.gem.20241230-31-vzh7v9 clean
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241229-31-bkoqwl sitelibdir\=./.gem.20241229-31-bkoqwl install
+/usr/bin/install -c -m 0755 debug.so ./.gem.20241229-31-bkoqwl/debug
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/debug-1.10.0/ext/debug
+make DESTDIR\= sitearchdir\=./.gem.20241229-31-bkoqwl sitelibdir\=./.gem.20241229-31-bkoqwl clean
+>>>>>>> origin/main

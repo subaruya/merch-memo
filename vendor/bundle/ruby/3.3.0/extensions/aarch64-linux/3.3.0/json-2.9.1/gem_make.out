@@ -9,16 +9,31 @@ checking for whether -std=c99 is accepted as CFLAGS... yes
 creating Makefile
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/json-2.9.1/ext/json/ext/parser
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241230-31-mj3cfn sitelibdir\=./.gem.20241230-31-mj3cfn clean
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/json-2.9.1/ext/json/ext/parser
 make DESTDIR\= sitearchdir\=./.gem.20241230-31-mj3cfn sitelibdir\=./.gem.20241230-31-mj3cfn
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241229-31-ipzvt1 sitelibdir\=./.gem.20241229-31-ipzvt1 clean
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/json-2.9.1/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20241229-31-ipzvt1 sitelibdir\=./.gem.20241229-31-ipzvt1
+>>>>>>> origin/main
 compiling parser.c
 linking shared-object json/ext/parser.so
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/json-2.9.1/ext/json/ext/parser
+<<<<<<< HEAD
 make DESTDIR\= sitearchdir\=./.gem.20241230-31-mj3cfn sitelibdir\=./.gem.20241230-31-mj3cfn install
 /usr/bin/install -c -m 0755 parser.so ./.gem.20241230-31-mj3cfn/json/ext
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/json-2.9.1/ext/json/ext/parser
 make DESTDIR\= sitearchdir\=./.gem.20241230-31-mj3cfn sitelibdir\=./.gem.20241230-31-mj3cfn clean
+=======
+make DESTDIR\= sitearchdir\=./.gem.20241229-31-ipzvt1 sitelibdir\=./.gem.20241229-31-ipzvt1 install
+/usr/bin/install -c -m 0755 parser.so ./.gem.20241229-31-ipzvt1/json/ext
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/json-2.9.1/ext/json/ext/parser
+make DESTDIR\= sitearchdir\=./.gem.20241229-31-ipzvt1 sitelibdir\=./.gem.20241229-31-ipzvt1 clean
+>>>>>>> origin/main
