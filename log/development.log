@@ -195,3 +195,30 @@ Processing by Rails::InfoController#routes as */*
 Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
 
 
+Started GET "/" for 192.168.65.1 at 2024-12-31 12:54:20 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (uninitialized constant PostsController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant PostsController)
+NameError (uninitialized constant PostsController)
+  
+Started GET "/" for 192.168.65.1 at 2024-12-31 12:54:22 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (uninitialized constant PostsController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant PostsController)
+NameError (uninitialized constant PostsController)
+  
+Started GET "/" for 192.168.65.1 at 2024-12-31 12:54:36 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (uninitialized constant PostsController):
+
+Causes:
+ActionDispatch::MissingController (uninitialized constant PostsController)
+NameError (uninitialized constant PostsController)
+  
