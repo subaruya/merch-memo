@@ -148,3 +148,50 @@ Completed 200 OK in 25ms (Views: 9.4ms | ActiveRecord: 0.0ms (0 queries, 0 cache
 >>>>>>> origin/main
 
 
+Started GET "/" for 192.168.65.1 at 2024-12-31 12:50:52 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ArgumentError (Route path not specified):
+  
+config/routes.rb:12:in `block in <main>'
+config/routes.rb:1:in `<main>'
+Started GET "/favicon.ico" for 192.168.65.1 at 2024-12-31 12:50:53 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  
+ActionController::RoutingError (No route matches [GET] "/favicon.ico"):
+  
+Started GET "/" for 192.168.65.1 at 2024-12-31 12:51:00 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::WelcomeController#index as HTML
+  Rendering vendor/bundle/ruby/3.3.0/gems/railties-7.2.2.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered vendor/bundle/ruby/3.3.0/gems/railties-7.2.2.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.5ms | GC: 0.0ms)
+Completed 200 OK in 28ms (Views: 14.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/rails/info/routes" for 192.168.65.1 at 2024-12-31 12:51:07 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout vendor/bundle/ruby/3.3.0/gems/railties-7.2.2.1/lib/rails/templates/layouts/application.html.erb
+  Rendering vendor/bundle/ruby/3.3.0/gems/railties-7.2.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of vendor/bundle/ruby/3.3.0/gems/actionpack-7.2.2.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [29 times] (Duration: 36.6ms | GC: 20.9ms)
+  Rendered vendor/bundle/ruby/3.3.0/gems/actionpack-7.2.2.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 2.9ms | GC: 0.0ms)
+  Rendered vendor/bundle/ruby/3.3.0/gems/railties-7.2.2.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 46.6ms | GC: 20.9ms)
+  Rendered layout vendor/bundle/ruby/3.3.0/gems/railties-7.2.2.1/lib/rails/templates/layouts/application.html.erb (Duration: 48.7ms | GC: 20.9ms)
+Completed 200 OK in 53ms (Views: 49.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 20.9ms)
+
+
+Started GET "/rails/info/routes?query=index" for 192.168.65.1 at 2024-12-31 12:51:26 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"query"=>"index"}
+Completed 200 OK in 8ms (Views: 0.6ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.6ms)
+
+
+Started GET "/rails/info/routes?query=index" for 192.168.65.1 at 2024-12-31 12:51:26 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by Rails::InfoController#routes as */*
+  Parameters: {"query"=>"index"}
+Completed 200 OK in 3ms (Views: 0.1ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.6ms)
+
+
