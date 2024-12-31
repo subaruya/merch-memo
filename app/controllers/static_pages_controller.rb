@@ -1,3 +1,5 @@
 class StaticPagesController < ApplicationController
-  def top; end
+  def top
+    render layout: false
+  end
 end
