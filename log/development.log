@@ -2167,3 +2167,20 @@ Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255
   
 ActionController::RoutingError (No route matches [GET] "/manifest.json"):
   
+Started GET "/" for 192.168.65.1 at 2024-12-31 17:35:10 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 0.6ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.3ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 15.4ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 17.2ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/manifest.json" for 192.168.65.1 at 2024-12-31 17:35:11 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
