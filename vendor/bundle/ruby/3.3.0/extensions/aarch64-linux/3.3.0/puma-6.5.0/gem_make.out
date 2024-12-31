@@ -25,10 +25,17 @@ checking for Random.bytes... yes
 creating Makefile
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/puma-6.5.0/ext/puma_http11
+<<<<<<< HEAD
+make DESTDIR\= sitearchdir\=./.gem.20241230-31-9pge31 sitelibdir\=./.gem.20241230-31-9pge31 clean
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/puma-6.5.0/ext/puma_http11
+make DESTDIR\= sitearchdir\=./.gem.20241230-31-9pge31 sitelibdir\=./.gem.20241230-31-9pge31
+=======
 make DESTDIR\= sitearchdir\=./.gem.20241229-31-frrpmd sitelibdir\=./.gem.20241229-31-frrpmd clean
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/puma-6.5.0/ext/puma_http11
 make DESTDIR\= sitearchdir\=./.gem.20241229-31-frrpmd sitelibdir\=./.gem.20241229-31-frrpmd
+>>>>>>> origin/main
 compiling http11_parser.c
 ext/puma_http11/http11_parser.c: In function ‘puma_parser_execute’:
 ext/puma_http11/http11_parser.c:436:19: warning: comparison is always true due to limited range of data type [-Wtype-limits]
@@ -48,8 +55,16 @@ compiling puma_http11.c
 linking shared-object puma/puma_http11.so
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/puma-6.5.0/ext/puma_http11
+<<<<<<< HEAD
+make DESTDIR\= sitearchdir\=./.gem.20241230-31-9pge31 sitelibdir\=./.gem.20241230-31-9pge31 install
+/usr/bin/install -c -m 0755 puma_http11.so ./.gem.20241230-31-9pge31/puma
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/puma-6.5.0/ext/puma_http11
+make DESTDIR\= sitearchdir\=./.gem.20241230-31-9pge31 sitelibdir\=./.gem.20241230-31-9pge31 clean
+=======
 make DESTDIR\= sitearchdir\=./.gem.20241229-31-frrpmd sitelibdir\=./.gem.20241229-31-frrpmd install
 /usr/bin/install -c -m 0755 puma_http11.so ./.gem.20241229-31-frrpmd/puma
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/puma-6.5.0/ext/puma_http11
 make DESTDIR\= sitearchdir\=./.gem.20241229-31-frrpmd sitelibdir\=./.gem.20241229-31-frrpmd clean
+>>>>>>> origin/main

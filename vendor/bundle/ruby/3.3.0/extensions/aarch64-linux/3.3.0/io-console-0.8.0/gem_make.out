@@ -16,16 +16,31 @@ checking for ttyname_r()... yes
 creating Makefile
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/io-console-0.8.0/ext/io/console
+<<<<<<< HEAD
+make DESTDIR\= sitearchdir\=./.gem.20241230-1-ivi331 sitelibdir\=./.gem.20241230-1-ivi331 clean
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/io-console-0.8.0/ext/io/console
+make DESTDIR\= sitearchdir\=./.gem.20241230-1-ivi331 sitelibdir\=./.gem.20241230-1-ivi331
+=======
 make DESTDIR\= sitearchdir\=./.gem.20241229-1-zpfkss sitelibdir\=./.gem.20241229-1-zpfkss clean
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/io-console-0.8.0/ext/io/console
 make DESTDIR\= sitearchdir\=./.gem.20241229-1-zpfkss sitelibdir\=./.gem.20241229-1-zpfkss
+>>>>>>> origin/main
 compiling console.c
 linking shared-object io/console.so
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/io-console-0.8.0/ext/io/console
+<<<<<<< HEAD
+make DESTDIR\= sitearchdir\=./.gem.20241230-1-ivi331 sitelibdir\=./.gem.20241230-1-ivi331 install
+/usr/bin/install -c -m 0755 console.so ./.gem.20241230-1-ivi331/io
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/io-console-0.8.0/ext/io/console
+make DESTDIR\= sitearchdir\=./.gem.20241230-1-ivi331 sitelibdir\=./.gem.20241230-1-ivi331 clean
+=======
 make DESTDIR\= sitearchdir\=./.gem.20241229-1-zpfkss sitelibdir\=./.gem.20241229-1-zpfkss install
 /usr/bin/install -c -m 0755 console.so ./.gem.20241229-1-zpfkss/io
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/io-console-0.8.0/ext/io/console
 make DESTDIR\= sitearchdir\=./.gem.20241229-1-zpfkss sitelibdir\=./.gem.20241229-1-zpfkss clean
+>>>>>>> origin/main

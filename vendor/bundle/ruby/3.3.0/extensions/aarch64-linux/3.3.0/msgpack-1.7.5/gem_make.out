@@ -14,10 +14,17 @@ checking for whether -DSTR_UMINUS_DEDUPE_FROZEN=1 is accepted as CFLAGS... yes
 creating Makefile
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/msgpack-1.7.5/ext/msgpack
+<<<<<<< HEAD
+make DESTDIR\= sitearchdir\=./.gem.20241230-31-3gegq7 sitelibdir\=./.gem.20241230-31-3gegq7 clean
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/msgpack-1.7.5/ext/msgpack
+make DESTDIR\= sitearchdir\=./.gem.20241230-31-3gegq7 sitelibdir\=./.gem.20241230-31-3gegq7
+=======
 make DESTDIR\= sitearchdir\=./.gem.20241229-31-844t8s sitelibdir\=./.gem.20241229-31-844t8s clean
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/msgpack-1.7.5/ext/msgpack
 make DESTDIR\= sitearchdir\=./.gem.20241229-31-844t8s sitelibdir\=./.gem.20241229-31-844t8s
+>>>>>>> origin/main
 compiling buffer.c
 compiling buffer_class.c
 compiling extension_value_class.c
@@ -33,8 +40,16 @@ compiling unpacker_ext_registry.c
 linking shared-object msgpack/msgpack.so
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/msgpack-1.7.5/ext/msgpack
+<<<<<<< HEAD
+make DESTDIR\= sitearchdir\=./.gem.20241230-31-3gegq7 sitelibdir\=./.gem.20241230-31-3gegq7 install
+/usr/bin/install -c -m 0755 msgpack.so ./.gem.20241230-31-3gegq7/msgpack
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/msgpack-1.7.5/ext/msgpack
+make DESTDIR\= sitearchdir\=./.gem.20241230-31-3gegq7 sitelibdir\=./.gem.20241230-31-3gegq7 clean
+=======
 make DESTDIR\= sitearchdir\=./.gem.20241229-31-844t8s sitelibdir\=./.gem.20241229-31-844t8s install
 /usr/bin/install -c -m 0755 msgpack.so ./.gem.20241229-31-844t8s/msgpack
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/msgpack-1.7.5/ext/msgpack
 make DESTDIR\= sitearchdir\=./.gem.20241229-31-844t8s sitelibdir\=./.gem.20241229-31-844t8s clean
+>>>>>>> origin/main

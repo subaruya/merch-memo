@@ -6,10 +6,17 @@ checking for altzone in time.h with  -Werror... no
 creating Makefile
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/date-3.4.1/ext/date
+<<<<<<< HEAD
+make DESTDIR\= sitearchdir\=./.gem.20241230-1-epmg27 sitelibdir\=./.gem.20241230-1-epmg27 clean
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/date-3.4.1/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20241230-1-epmg27 sitelibdir\=./.gem.20241230-1-epmg27
+=======
 make DESTDIR\= sitearchdir\=./.gem.20241229-1-a5x25f sitelibdir\=./.gem.20241229-1-a5x25f clean
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/date-3.4.1/ext/date
 make DESTDIR\= sitearchdir\=./.gem.20241229-1-a5x25f sitelibdir\=./.gem.20241229-1-a5x25f
+>>>>>>> origin/main
 compiling date_core.c
 compiling date_parse.c
 compiling date_strftime.c
@@ -17,8 +24,16 @@ compiling date_strptime.c
 linking shared-object date_core.so
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/date-3.4.1/ext/date
+<<<<<<< HEAD
+make DESTDIR\= sitearchdir\=./.gem.20241230-1-epmg27 sitelibdir\=./.gem.20241230-1-epmg27 install
+/usr/bin/install -c -m 0755 date_core.so ./.gem.20241230-1-epmg27
+
+current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/date-3.4.1/ext/date
+make DESTDIR\= sitearchdir\=./.gem.20241230-1-epmg27 sitelibdir\=./.gem.20241230-1-epmg27 clean
+=======
 make DESTDIR\= sitearchdir\=./.gem.20241229-1-a5x25f sitelibdir\=./.gem.20241229-1-a5x25f install
 /usr/bin/install -c -m 0755 date_core.so ./.gem.20241229-1-a5x25f
 
 current directory: /myapp/vendor/bundle/ruby/3.3.0/gems/date-3.4.1/ext/date
 make DESTDIR\= sitearchdir\=./.gem.20241229-1-a5x25f sitelibdir\=./.gem.20241229-1-a5x25f clean
+>>>>>>> origin/main
