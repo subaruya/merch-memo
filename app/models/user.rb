@@ -6,4 +6,6 @@ class User < ApplicationRecord
   # validates :password_confirmation, presence: true, if: -> { new_record? || changes[:crypted_password] }
   # ↑本リリース時にはコメントアウトをはずし、ビューにパスワード確認フォームをつける
   validates :email, presence: true, uniqueness: true
+
+  has_many :items, dependent: :destroy
 end
