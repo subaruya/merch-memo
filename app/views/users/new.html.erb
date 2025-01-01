@@ -1,0 +1,14 @@
+<div>
+  <h2>ユーザー登録</h2>
+  <%= form_with model: @user, local: true do |f| %>
+    <div>
+      <%= f.label :email %>
+      <%= f.email_field :email %><span>必須</span>
+    </div>
+    <div>
+      <%= f.label :password %>
+      <%= f.password_field :password %><span>必須</span>
+    </div>
+    <%= f.submit "登録する" %>
+  <% end %>
+</div>
