@@ -6,4 +6,5 @@ class Item < ApplicationRecord
   validates :note, length: { maximum: 65_535 }
 
   belongs_to :user
+  belongs_to :pre_ordered_site
 end

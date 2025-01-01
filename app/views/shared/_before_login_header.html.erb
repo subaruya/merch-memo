@@ -1,7 +1,12 @@
 <header>
   <div>
   <%= link_to '/' do %>
-    <a href="/"><h1>OTAKeep</h1></a>
+    <h1>OTAKeep</h1>
   <% end %>
   </div>
 </header>
+<% flash.each do |message_type, message| %>
+  <div>
+    <%= message %>
+  </div>
+<% end %>
