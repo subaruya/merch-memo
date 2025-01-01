@@ -1,0 +1,2 @@
+class PreOrderedSite < ApplicationRecord
+end
