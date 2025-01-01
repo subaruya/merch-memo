@@ -7,4 +7,3 @@ class User < ApplicationRecord
   # ↑本リリース時にはコメントアウトをはずし、ビューにパスワード確認フォームをつける
   validates :email, presence: true, uniqueness: true
 end
-う

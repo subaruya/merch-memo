@@ -19,11 +19,18 @@
     <%= javascript_include_tag "application", "data-turbo-track": "reload", type: "module" %>
   </head>
 
+<!-- ↓tailwindのリセットCSSを一時的に無効にする
+app/assets/stylesheets/application.tailwind.cssに設定あり
+-->
   <body class="no-reset">
-    <% if logged_in? %>
-     <%= render 'shared/header' %>
+
+<!-- ヘッダーの出しわけ -->
+    <% if ['static_pages', 'users', 'user_sessions'].include?(controller_name) && ['top', 'new', 'create'].include?(action_name) %>
+      <%= render 'shared/before_login_header' %>
+    <% elsif logged_in? %>
+      <%= render 'shared/header' %>
     <% else %>
-     <%= render 'shared/before_login_header' %>
+      <%= render 'shared/before_login_header' %>
     <% end %>
     <%= yield %>
     <%= render 'shared/footer' %> 
