@@ -26,7 +26,7 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_01_101520) do
     t.bigint "pre_ordered_site_id", null: false
     t.index ["pre_ordered_site_id"], name: "index_items_on_pre_ordered_site_id"
     t.index ["user_id"], name: "index_items_on_user_id"
-  end
+   end
 
   create_table "pre_ordered_sites", force: :cascade do |t|
     t.string "name"
