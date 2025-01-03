@@ -31,7 +31,33 @@ class ItemsController < ApplicationController
   end
 
   def edit
-    @item = Item.find(params[:id])
+    @item = current_user.items.find(params[:id])
+    @pre_ordered_site_name = @item.pre_ordered_site.name
+  end
+
+  def update
+    @item = current_user.items.find(params[:id])
+    # 入力された予約サイト名を優先的に表示
+    @pre_ordered_site_name = params[:item][:pre_ordered_site_name] || @item.pre_ordered_site.name
+  
+    # 予約サイト名を更新、または新規作成
+    pre_ordered_site = PreOrderedSite.find_or_create_by(name: params[:item][:pre_ordered_site_name])
+    @item.pre_ordered_site_id = pre_ordered_site.id
+  
+    # 他のカラムを更新
+    if @item.update(item_params)
+      redirect_to item_path(@item), success: 'グッズ情報を更新しました'
+    else
+      flash.now[:danger] = '編集が保存できませんでした'
+      render :edit, status: :unprocessable_entity
+    end
+  end
+  
+
+  def destroy
+    @item = current_user.items.find(params[:id])
+    @item.destroy!
+    redirect_to items_path, success: 'グッズ情報を削除しました'
   end
 
   private

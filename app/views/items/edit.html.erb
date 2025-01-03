@@ -7,8 +7,9 @@
     </section>
     <section>
       <h3><%= f.label '予約サイト' %></h3>
-      <%= f.text_field :pre_ordered_site_name %><span>必須</span>
-    </section>
+      <%= f.text_field :pre_ordered_site_name, value: @pre_ordered_site_name || @item.pre_ordered_site.name %><span>必須</span>
+  </section>
+  
     <section>
       <h3><%= f.label '発売予定日' %></h3>
       <%= f.date_field :release_date %>
@@ -19,12 +20,12 @@
     </section>
     <section>
       <h3><%= f.label '価格' %></h3>
-      <%= f.text_field :price %>
+      <%= f.text_field :price %><span>円</span>
     </section>
     <section>
       <h3><%= f.label 'メモ' %></h3>
       <%= f.text_area :note %>
     </section>
-    <%= f.submit "登録する" %>
+    <%= f.submit "保存する" %>
   <% end %>
 </div>
