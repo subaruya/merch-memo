@@ -1,0 +1,32 @@
+<div>
+  <h2>グッズ情報詳細</h2>
+
+  <section>
+    <h3>グッズ名</h3>
+    <%= @item.name %>
+  </section>
+  <section>
+    <h3>予約サイト</h3>
+    <%= @item.pre_ordered_site.name %>
+  </section>
+  <section>
+    <h3>発売予定日</h3>
+    <%= @item.release_date || '未登録' %>
+  </section>
+  <section>
+    <h3>予約日</h3>
+    <%= @item.pre_ordered_date || '未登録' %>
+  </section>
+  <section>
+    <h3>価格</h3>
+    <%= number_to_currency(@item.price, precision: 0, unit: "円") || '未登録' %>
+  </section>
+  <section>
+    <h3>メモ</h3>
+    <%= @item.note || '未登録' %>
+  </section>
+  <%= form_with model: @item, local: true do |f| %>
+    <%= button_to '編集する', '#', method: :get %>
+    <%= f.submit "削除" %>
+  <% end %>
+</div>
