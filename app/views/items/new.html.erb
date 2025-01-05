@@ -1,0 +1,30 @@
+<div>
+  <h2>グッズ情報登録</h2>
+  <%= form_with model: @item, local: true do |f| %>
+    <section>
+      <h3><%= f.label 'グッズ名' %></h3>
+      <%= f.text_field :name %><span>必須</span>
+    </section>
+    <section>
+      <h3><%= f.label '予約サイト' %></h3>
+      <%= f.text_field :pre_ordered_site_name, value: @pre_ordered_site_name || @item.pre_ordered_site.name %><span>必須</span>
+    </section>
+    <section>
+      <h3><%= f.label '発売予定日' %></h3>
+      <%= f.date_field :release_date %>
+    </section>
+    <section>
+      <h3><%= f.label '予約日' %></h3>
+      <%= f.date_field :pre_ordered_date %>
+    </section>
+    <section>
+      <h3><%= f.label '価格' %></h3>
+      <%= f.text_field :price %><span>円</span>
+    </section>
+    <section>
+      <h3><%= f.label 'メモ' %></h3>
+      <%= f.text_area :note %>
+    </section>
+    <%= f.submit "登録する" %>
+  <% end %>
+</div>

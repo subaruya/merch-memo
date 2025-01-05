@@ -1,0 +1,14 @@
+<div>
+  <% if @items.present? %>
+    <table>
+      <thead>
+        <tr><th>発売予定日</th><th>グッズ名</th><th>予約サイト</th></tr>
+      </thead>
+      <tbody>
+        <%= render @items %>
+      </tbody>
+    </table>
+  <% else %>
+    <div>グッズ情報が登録されていません</div>
+  <% end %>
+</div>

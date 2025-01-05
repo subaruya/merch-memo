@@ -1,5 +1,16 @@
-<div class='top-wrapper'>
-  <div class='top-inner-text'>
-    <h1>RUNTEQ BOARD APP</h1>
+<div>
+  <h2> -予約＆所持グッズ情報管理アプリ-</h2>
+  <div>
+    <section>
+      <h3>このサービスは？</h3>
+      <p>
+      キャラクターグッズの予約情報を管理するWebアプリです。<br>
+      予約開始待ちの欲しいグッズや予約済グッズの名前や予約日、予約サイト、発売予定日を記録・検索でき、<br>予約忘れ・重複注文の防止や管理のサポートをすることを目的としています。
+      </p>
+    </section>
+    <div>
+      <%= button_to 'ユーザー登録', new_user_path, method: :get %>
+      <%= button_to 'ログイン', login_path, method: :get %>
+    </div>
   </div>
 </div>

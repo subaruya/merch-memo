@@ -1,3 +1,8 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* リセットを無効化するクラス */
+.no-reset * {
+  all: revert; /* リセット効果を無効化 */
+}

@@ -1,0 +1,14 @@
+<div>
+  <h2>ログイン</h2>
+  <%= form_with model: @user, url: login_path do |f| %>
+    <div>
+      <%= f.label 'メールアドレス' %>
+      <%= f.email_field :email %>
+    </div>
+    <div>
+      <%= f.label 'パスワード' %>
+      <%= f.password_field :password %>
+    </div>
+    <%= f.submit "ログイン" %>
+  <% end %>
+</div>
