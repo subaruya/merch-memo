@@ -42590,3 +42590,209 @@ Migrating to AddPreOrderedSiteToItems (20250101100833)
   [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (33.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_development"[0m
+  [1m[35m (47.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_test"[0m
+  [1m[35m (106.7ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  [1m[35m (82.3ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (17.7ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "items" CASCADE[0m
+  [1m[35m (3.2ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "name" character varying NOT NULL, "pre_ordered_site_id" integer NOT NULL, "pre_ordered_date" timestamp(6), "release_date" timestamp(6), "price" decimal, "note" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" bigint)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE INDEX "index_items_on_user_id" ON "items" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "pre_ordered_sites" CASCADE[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "pre_ordered_sites" ("id" bigserial primary key, "name" character varying, "url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_pre_ordered_sites_on_name" ON "pre_ordered_sites" ("name")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (1.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "crypted_password" character varying, "salt" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "items" ADD CONSTRAINT "fk_rails_d4b6334db2"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250101100319)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20250101100001),
+(20241231085307);[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-01-05 23:19:40.712990', '2025-01-05 23:19:40.712991') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', 'cddb4e8f37bb8e7f07983454f7015462563728be', '2025-01-05 23:19:40.718413', '2025-01-05 23:19:40.718414') RETURNING "key"[0m
+  [1m[35mSQL (10.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "items" CASCADE[0m
+  [1m[35m (2.7ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "name" character varying NOT NULL, "pre_ordered_site_id" integer NOT NULL, "pre_ordered_date" timestamp(6), "release_date" timestamp(6), "price" decimal, "note" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" bigint)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE INDEX "index_items_on_user_id" ON "items" ("user_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "pre_ordered_sites" CASCADE[0m
+  [1m[35m (1.1ms)[0m  [1m[35mCREATE TABLE "pre_ordered_sites" ("id" bigserial primary key, "name" character varying, "url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_pre_ordered_sites_on_name" ON "pre_ordered_sites" ("name")[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE IF EXISTS "users" CASCADE[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "crypted_password" character varying, "salt" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[35m (1.2ms)[0m  [1m[35mALTER TABLE "items" ADD CONSTRAINT "fk_rails_d4b6334db2"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20250101100319)[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20250101100001),
+(20241231085307);[0m
+  [1m[35m (0.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-01-05 23:19:40.766121', '2025-01-05 23:19:40.766122') RETURNING "key"[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Update (0.5ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = 'test', "updated_at" = '2025-01-05 23:19:40.767812' WHERE "ar_internal_metadata"."key" = 'environment'[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "schema_sha1"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('schema_sha1', 'cddb4e8f37bb8e7f07983454f7015462563728be', '2025-01-05 23:19:40.769597', '2025-01-05 23:19:40.769598') RETURNING "key"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPreOrderedSite Create (1.6ms)[0m  [1m[32mINSERT INTO "pre_ordered_sites" ("name", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Example site0"], ["url", nil], ["created_at", "2025-01-05 23:19:40.864308"], ["updated_at", "2025-01-05 23:19:40.864308"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPreOrderedSite Create (0.9ms)[0m  [1m[32mINSERT INTO "pre_ordered_sites" ("name", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Example site1"], ["url", nil], ["created_at", "2025-01-05 23:19:40.871611"], ["updated_at", "2025-01-05 23:19:40.871611"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPreOrderedSite Create (1.0ms)[0m  [1m[32mINSERT INTO "pre_ordered_sites" ("name", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Example site2"], ["url", nil], ["created_at", "2025-01-05 23:19:40.875693"], ["updated_at", "2025-01-05 23:19:40.875693"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPreOrderedSite Create (0.8ms)[0m  [1m[32mINSERT INTO "pre_ordered_sites" ("name", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Example site3"], ["url", nil], ["created_at", "2025-01-05 23:19:40.879173"], ["updated_at", "2025-01-05 23:19:40.879173"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPreOrderedSite Create (0.9ms)[0m  [1m[32mINSERT INTO "pre_ordered_sites" ("name", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Example site4"], ["url", nil], ["created_at", "2025-01-05 23:19:40.886881"], ["updated_at", "2025-01-05 23:19:40.886881"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPreOrderedSite Create (0.7ms)[0m  [1m[32mINSERT INTO "pre_ordered_sites" ("name", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Example site5"], ["url", nil], ["created_at", "2025-01-05 23:19:40.891068"], ["updated_at", "2025-01-05 23:19:40.891068"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPreOrderedSite Create (1.0ms)[0m  [1m[32mINSERT INTO "pre_ordered_sites" ("name", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Example site6"], ["url", nil], ["created_at", "2025-01-05 23:19:40.896133"], ["updated_at", "2025-01-05 23:19:40.896133"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPreOrderedSite Create (0.8ms)[0m  [1m[32mINSERT INTO "pre_ordered_sites" ("name", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Example site7"], ["url", nil], ["created_at", "2025-01-05 23:19:40.899444"], ["updated_at", "2025-01-05 23:19:40.899444"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPreOrderedSite Create (0.7ms)[0m  [1m[32mINSERT INTO "pre_ordered_sites" ("name", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Example site8"], ["url", nil], ["created_at", "2025-01-05 23:19:40.905190"], ["updated_at", "2025-01-05 23:19:40.905190"]]
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mPreOrderedSite Create (0.7ms)[0m  [1m[32mINSERT INTO "pre_ordered_sites" ("name", "url", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["name", "Example site9"], ["url", nil], ["created_at", "2025-01-05 23:19:40.908858"], ["updated_at", "2025-01-05 23:19:40.908858"]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Ids (0.2ms)[0m  [1m[34mSELECT "pre_ordered_sites"."id" FROM "pre_ordered_sites"[0m
+  [1m[36mPreOrderedSite Load (0.2ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (1.3ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item0"], ["pre_ordered_site_id", 2], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:40.967766"], ["updated_at", "2025-01-05 23:19:40.967766"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.9ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item1"], ["pre_ordered_site_id", 7], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:40.976804"], ["updated_at", "2025-01-05 23:19:40.976804"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.8ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item2"], ["pre_ordered_site_id", 3], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:40.982500"], ["updated_at", "2025-01-05 23:19:40.982500"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.7ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item3"], ["pre_ordered_site_id", 1], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:40.987070"], ["updated_at", "2025-01-05 23:19:40.987070"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.8ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item4"], ["pre_ordered_site_id", 8], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:40.991183"], ["updated_at", "2025-01-05 23:19:40.991183"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.2ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.8ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item5"], ["pre_ordered_site_id", 10], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:40.998954"], ["updated_at", "2025-01-05 23:19:40.998954"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.8ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item6"], ["pre_ordered_site_id", 6], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:41.003828"], ["updated_at", "2025-01-05 23:19:41.003828"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (1.0ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item7"], ["pre_ordered_site_id", 3], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:41.013062"], ["updated_at", "2025-01-05 23:19:41.013062"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.9ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item8"], ["pre_ordered_site_id", 5], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:41.016627"], ["updated_at", "2025-01-05 23:19:41.016627"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.9ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item9"], ["pre_ordered_site_id", 1], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:41.022569"], ["updated_at", "2025-01-05 23:19:41.022569"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (1.1ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item10"], ["pre_ordered_site_id", 8], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:41.026850"], ["updated_at", "2025-01-05 23:19:41.026850"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.8ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item11"], ["pre_ordered_site_id", 1], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:41.030212"], ["updated_at", "2025-01-05 23:19:41.030212"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.7ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item12"], ["pre_ordered_site_id", 5], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:41.033664"], ["updated_at", "2025-01-05 23:19:41.033664"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.2ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.8ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item13"], ["pre_ordered_site_id", 6], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:41.038594"], ["updated_at", "2025-01-05 23:19:41.038594"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.8ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item14"], ["pre_ordered_site_id", 1], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:41.049778"], ["updated_at", "2025-01-05 23:19:41.049778"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (1.0ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item15"], ["pre_ordered_site_id", 1], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:41.061850"], ["updated_at", "2025-01-05 23:19:41.061850"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.9ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item16"], ["pre_ordered_site_id", 3], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:41.067972"], ["updated_at", "2025-01-05 23:19:41.067972"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.7ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item17"], ["pre_ordered_site_id", 9], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:41.071720"], ["updated_at", "2025-01-05 23:19:41.071720"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (1.4ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item18"], ["pre_ordered_site_id", 3], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:41.075045"], ["updated_at", "2025-01-05 23:19:41.075045"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (2.0ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item19"], ["pre_ordered_site_id", 3], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:41.086971"], ["updated_at", "2025-01-05 23:19:41.086971"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (1.0ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item20"], ["pre_ordered_site_id", 6], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:41.095761"], ["updated_at", "2025-01-05 23:19:41.095761"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.8ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item21"], ["pre_ordered_site_id", 10], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:41.099353"], ["updated_at", "2025-01-05 23:19:41.099353"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.7ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item22"], ["pre_ordered_site_id", 10], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:41.102310"], ["updated_at", "2025-01-05 23:19:41.102310"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.9ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item23"], ["pre_ordered_site_id", 8], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:41.108684"], ["updated_at", "2025-01-05 23:19:41.108684"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.0ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mItem Create (0.7ms)[0m  [1m[32mINSERT INTO "items" ("name", "pre_ordered_site_id", "pre_ordered_date", "release_date", "price", "note", "created_at", "updated_at", "user_id") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9) RETURNING "id"[0m  [["name", "Sample Item24"], ["pre_ordered_site_id", 7], ["pre_ordered_date", nil], ["release_date", nil], ["price", nil], ["note", nil], ["created_at", "2025-01-05 23:19:41.112254"], ["updated_at", "2025-01-05 23:19:41.112254"], ["user_id", nil]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m

@@ -10,6 +10,7 @@ class CreateItems < ActiveRecord::Migration[7.2]
       t.timestamps
 
       t.references :user, foreign_key: true
+      t.reference :pre_ordered_site, foreign_key: true
     end
   end
 end
