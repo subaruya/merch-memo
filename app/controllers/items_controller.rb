@@ -1,6 +1,6 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item
+    @items = current_user.items
     .order(Arel.sql("COALESCE(release_date, '9999-12-31') ASC, pre_ordered_date ASC"))
     # 年月日だけでソートしているので時刻部分が考慮されない。
     # 同日内で時刻によるソートが必要になった場合は要調整
@@ -12,7 +12,7 @@ class ItemsController < ApplicationController
   end
 
   def show
-    @item = Item.find(params[:id])
+    @item = current_user.items.find(params[:id])
   end
 
   def create
