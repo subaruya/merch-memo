@@ -11,11 +11,11 @@
   </section>
   <section>
     <h3>発売予定日</h3>
-    <%= @item.release_date || '未登録' %>
+    <%= @item.formatted_release_date || '未登録' %>
   </section>
   <section>
     <h3>予約日</h3>
-    <%= @item.pre_ordered_date || '未登録' %>
+    <%= @item.formatted_pre_ordered_date || '未登録' %>
   </section>
   <section>
     <h3>価格</h3>

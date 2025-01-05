@@ -20,7 +20,8 @@
     </section>
     <section>
       <h3><%= f.label '価格' %></h3>
-      <%= f.text_field :price %><span>円</span>
+      <%= f.text_field :price, value: number_with_precision(@item.price, precision: 0, delimiter: ",") %><span>円</span>
+
     </section>
     <section>
       <h3><%= f.label 'メモ' %></h3>
