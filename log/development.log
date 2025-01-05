@@ -42796,3 +42796,251 @@ FOREIGN KEY ("user_id")
   [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 192.168.65.1 at 2025-01-05 23:22:37 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by StaticPagesController#top as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering static_pages/top.html.erb within layouts/application
+  Rendered static_pages/top.html.erb within layouts/application (Duration: 6.4ms | GC: 0.0ms)
+  Rendered shared/_before_login_header.html.erb (Duration: 5.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 1.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | GC: 0.0ms)
+Completed 200 OK in 55ms (Views: 40.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/application-132bb9fc1c93b270f62d47376a8e21fd96e1f5af602fb98282a032a8ce0ec1e8.css"):
+  
+Started GET "/manifest.json" for 192.168.65.1 at 2025-01-05 23:22:39 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started GET "/users/new" for 192.168.65.1 at 2025-01-05 23:22:41 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 12.2ms | GC: 0.0ms)
+  Rendered shared/_before_login_header.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 14.7ms | GC: 0.0ms)
+Completed 200 OK in 40ms (Views: 16.6ms | ActiveRecord: 2.9ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/users/new" for 192.168.65.1 at 2025-01-05 23:22:41 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/assets/application-132bb9fc1c93b270f62d47376a8e21fd96e1f5af602fb98282a032a8ce0ec1e8.css"):
+  
+Processing by UsersController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering users/new.html.erb within layouts/application
+  Rendered users/new.html.erb within layouts/application (Duration: 3.8ms | GC: 0.7ms)
+  Rendered shared/_before_login_header.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 8.7ms | GC: 1.0ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 1.0ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/application-132bb9fc1c93b270f62d47376a8e21fd96e1f5af602fb98282a032a8ce0ec1e8.css"):
+  
+Started GET "/manifest.json" for 192.168.65.1 at 2025-01-05 23:22:41 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+  
+ActionController::RoutingError (No route matches [GET] "/manifest.json"):
+  
+Started POST "/users" for 192.168.65.1 at 2025-01-05 23:22:49 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UsersController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "user"=>{"email"=>"[FILTERED]", "password"=>"[FILTERED]"}, "commit"=>"登録する"}
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Exists? (2.4ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "subaruya@example.com"], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mUser Create (1.1ms)[0m  [1m[32mINSERT INTO "users" ("email", "crypted_password", "salt", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "subaruya@example.com"], ["crypted_password", "$2a$10$c8PIV6gZRXFczwShcmVHgubbJ0yFjR51Otk/4f6JfYb3eHfSXpXDe"], ["salt", "392DStBXc_9ZPXKzB2wJ"], ["created_at", "2025-01-05 23:22:50.034208"], ["updated_at", "2025-01-05 23:22:50.034208"]]
+  ↳ app/controllers/users_controller.rb:10:in `create'
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/users_controller.rb:10:in `create'
+Redirected to http://localhost:3000/login
+Completed 302 Found in 83ms (ActiveRecord: 4.5ms (2 queries, 0 cached) | GC: 0.3ms)
+
+
+Started GET "/login" for 192.168.65.1 at 2025-01-05 23:22:50 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UserSessionsController#new as TURBO_STREAM
+  Rendering layout layouts/application.html.erb
+  Rendering user_sessions/new.html.erb within layouts/application
+DEPRECATION WARNING: Passing nil to the :model argument is deprecated and will raise in Rails 8.0 (called from _app_views_user_sessions_new_html_erb__3202076650971901815_1347660 at /myapp/app/views/user_sessions/new.html.erb:3)
+  Rendered user_sessions/new.html.erb within layouts/application (Duration: 6.2ms | GC: 0.0ms)
+  Rendered shared/_before_login_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.0ms (0 queries, 0 cached) | GC: 0.3ms)
+
+
+  
+ActionController::RoutingError (No route matches [GET] "/assets/application-132bb9fc1c93b270f62d47376a8e21fd96e1f5af602fb98282a032a8ce0ec1e8.css"):
+  
+Started POST "/login" for 192.168.65.1 at 2025-01-05 23:22:58 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by UserSessionsController#create as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "email"=>"[FILTERED]", "password"=>"[FILTERED]", "commit"=>"ログイン"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."email" = 'subaruya@example.com' ORDER BY "users"."id" ASC LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/controllers/user_sessions_controller.rb:7:in `create'
+Redirected to http://localhost:3000/items
+Completed 302 Found in 122ms (ActiveRecord: 0.5ms (1 query, 0 cached) | GC: 0.2ms)
+
+
+Started GET "/items" for 192.168.65.1 at 2025-01-05 23:22:58 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ItemsController#index as TURBO_STREAM
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY COALESCE(release_date, '9999-12-31') ASC, pre_ordered_date ASC[0m
+  ↳ app/views/items/index.html.erb:2
+  [1m[36mPreOrderedSite Load (0.2ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  Rendered collection of items/_item.html.erb [25 times] (Duration: 24.9ms | GC: 0.2ms)
+  Rendered items/index.html.erb within layouts/application (Duration: 30.2ms | GC: 0.3ms)
+  Rendered shared/_header.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 32.8ms | GC: 0.3ms)
+Completed 200 OK in 40ms (Views: 32.2ms | ActiveRecord: 1.9ms (27 queries, 16 cached) | GC: 0.4ms)
+
+
+Started GET "/items/1" for 192.168.65.1 at 2025-01-05 23:23:02 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/items/show.html.erb:10
+  Rendered items/show.html.erb within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.2ms | GC: 0.0ms)
+Completed 200 OK in 10ms (Views: 4.5ms | ActiveRecord: 0.4ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/items" for 192.168.65.1 at 2025-01-05 23:23:04 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (0.6ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY COALESCE(release_date, '9999-12-31') ASC, pre_ordered_date ASC[0m
+  ↳ app/views/items/index.html.erb:2
+  [1m[36mPreOrderedSite Load (0.2ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 8], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  Rendered collection of items/_item.html.erb [25 times] (Duration: 29.7ms | GC: 0.0ms)
+  Rendered items/index.html.erb within layouts/application (Duration: 35.7ms | GC: 2.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 38.1ms | GC: 2.0ms)
+Completed 200 OK in 46ms (Views: 37.3ms | ActiveRecord: 2.0ms (27 queries, 16 cached) | GC: 2.0ms)
+
+
