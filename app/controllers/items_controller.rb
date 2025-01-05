@@ -8,6 +8,7 @@ class ItemsController < ApplicationController
 
   def new
     @item = Item.new
+    @pre_ordered_site_name = @item.pre_ordered_site&.name || ''
   end
 
   def show
@@ -64,5 +65,6 @@ class ItemsController < ApplicationController
 
   def item_params
     params.require(:item).permit(:name, :pre_ordered_date, :release_date, :price, :note)
-  end
+          .merge(price: params[:item][:price].gsub(",", "").to_i)
+  end  
 end
