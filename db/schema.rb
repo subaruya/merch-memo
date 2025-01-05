@@ -10,12 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.2].define(version: 2025_01_01_101520) do
+ActiveRecord::Schema[7.2].define(version: 2025_01_01_100319) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "items", force: :cascade do |t|
     t.string "name", null: false
+    t.integer "pre_ordered_site_id", null: false
     t.datetime "pre_ordered_date"
     t.datetime "release_date"
     t.decimal "price"
@@ -23,10 +24,8 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_01_101520) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "user_id"
-    t.bigint "pre_ordered_site_id", null: false
-    t.index ["pre_ordered_site_id"], name: "index_items_on_pre_ordered_site_id"
     t.index ["user_id"], name: "index_items_on_user_id"
-   end
+  end
 
   create_table "pre_ordered_sites", force: :cascade do |t|
     t.string "name"
@@ -45,6 +44,5 @@ ActiveRecord::Schema[7.2].define(version: 2025_01_01_101520) do
     t.index ["email"], name: "index_users_on_email", unique: true
   end
 
-  add_foreign_key "items", "pre_ordered_sites"
   add_foreign_key "items", "users"
 end

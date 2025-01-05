@@ -8,6 +8,7 @@
 pre_ordered_site_ids = PreOrderedSite.ids
 
 25.times do |index|
+  user_id = 1 # ユーザーID（自分のものだけなのでとりあえず1）
   pre_ordered_site = PreOrderedSite.find(pre_ordered_site_ids.sample)
   pre_ordered_site.items.create!(name: "Sample Item#{index}",
                                 pre_ordered_site_id: pre_ordered_site_ids)

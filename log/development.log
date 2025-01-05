@@ -42237,3 +42237,356 @@ Processing by ItemsController#update as TURBO_STREAM
 Completed 422 Unprocessable Content in 157ms (Views: 3.6ms | ActiveRecord: 2.8ms (4 queries, 0 cached) | GC: 121.6ms)
 
 
+Started GET "/items/new" for 192.168.65.1 at 2025-01-03 21:59:29 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ItemsController#new as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering items/new.html.erb within layouts/application
+  Rendered items/new.html.erb within layouts/application (Duration: 24.9ms | GC: 13.8ms)
+  Rendered layout layouts/application.html.erb (Duration: 26.1ms | GC: 13.8ms)
+Completed 500 Internal Server Error in 78ms (ActiveRecord: 22.1ms (1 query, 0 cached) | GC: 24.5ms)
+
+
+  
+ActionView::Template::Error (undefined method `name' for nil):
+
+Causes:
+NoMethodError (undefined method `name' for nil)
+     7:     </section>
+     8:     <section>
+     9:       <h3><%= f.label '予約サイト' %></h3>
+    10:       <%= f.text_field :pre_ordered_site_name, value: @pre_ordered_site_name || @item.pre_ordered_site.name %><span>必須</span>
+    11:     </section>
+    12:     <section>
+    13:       <h3><%= f.label '発売予定日' %></h3>
+  
+app/views/items/new.html.erb:10
+app/views/items/new.html.erb:3
+Started GET "/items" for 192.168.65.1 at 2025-01-03 21:59:29 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ItemsController#index as HTML
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering layout layouts/application.html.erb
+  Rendering items/index.html.erb within layouts/application
+  [1m[36mItem Load (1.6ms)[0m  [1m[34mSELECT "items".* FROM "items" ORDER BY COALESCE(release_date, '9999-12-31') ASC, pre_ordered_date ASC[0m
+  ↳ app/views/items/index.html.erb:2
+  [1m[36mPreOrderedSite Load (0.4ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 16], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.6ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.8ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.2ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 14], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.4ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.2ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.6ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.4ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.5ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mPreOrderedSite Load (0.3ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  [1m[36mCACHE PreOrderedSite Load (0.0ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/views/items/_item.html.erb:4
+  Rendered collection of items/_item.html.erb [15 times] (Duration: 63.6ms | GC: 6.9ms)
+  Rendered items/index.html.erb within layouts/application (Duration: 69.9ms | GC: 6.9ms)
+  Rendered shared/_header.html.erb (Duration: 0.5ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 79.4ms | GC: 8.6ms)
+Completed 200 OK in 84ms (Views: 74.7ms | ActiveRecord: 6.5ms (17 queries, 4 cached) | GC: 8.6ms)
+
+
+Started GET "/items/9" for 192.168.65.1 at 2025-01-03 21:59:30 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"9"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.1ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 17], ["LIMIT", 1]]
+  ↳ app/views/items/show.html.erb:10
+  Rendered items/show.html.erb within layouts/application (Duration: 1.8ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.0ms)
+Completed 200 OK in 8ms (Views: 4.0ms | ActiveRecord: 0.5ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/items/5" for 192.168.65.1 at 2025-01-03 21:59:31 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 6], ["LIMIT", 1]]
+  ↳ app/views/items/show.html.erb:10
+  Rendered items/show.html.erb within layouts/application (Duration: 1.9ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 3.5ms | ActiveRecord: 0.5ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/items/25" for 192.168.65.1 at 2025-01-03 21:59:34 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"25"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 25], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 10], ["LIMIT", 1]]
+  ↳ app/views/items/show.html.erb:10
+  Rendered items/show.html.erb within layouts/application (Duration: 2.0ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | GC: 0.0ms)
+Completed 200 OK in 7ms (Views: 3.6ms | ActiveRecord: 0.5ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/items/28" for 192.168.65.1 at 2025-01-03 22:00:04 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"28"}
+  [1m[36mUser Load (2.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.4ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 28], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mPreOrderedSite Load (0.2ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 15], ["LIMIT", 1]]
+  ↳ app/views/items/show.html.erb:10
+  Rendered items/show.html.erb within layouts/application (Duration: 8.0ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.4ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 12.3ms | GC: 0.0ms)
+Completed 200 OK in 73ms (Views: 15.1ms | ActiveRecord: 2.7ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/items/26" for 192.168.65.1 at 2025-01-03 22:00:04 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ItemsController#show as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/items/show.html.erb:10
+  Rendered items/show.html.erb within layouts/application (Duration: 2.4ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | GC: 0.0ms)
+Completed 200 OK in 9ms (Views: 4.7ms | ActiveRecord: 0.4ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/items/26/edit" for 192.168.65.1 at 2025-01-03 22:00:06 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = $1 AND "items"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:34:in `edit'
+  [1m[36mPreOrderedSite Load (0.2ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:35:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering items/edit.html.erb within layouts/application
+  Rendered items/edit.html.erb within layouts/application (Duration: 4.0ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.2ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 5.9ms | GC: 0.0ms)
+Completed 200 OK in 20ms (Views: 6.6ms | ActiveRecord: 0.6ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started PATCH "/items/26" for 192.168.65.1 at 2025-01-03 22:00:12 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ItemsController#update as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "item"=>{"name"=>"ブルーレイ", "pre_ordered_site_name"=>"Amazon", "release_date"=>"2025-03-01", "pre_ordered_date"=>"2024-12-01", "price"=>"8000.0", "note"=>"特典付き豪華版"}, "commit"=>"保存する", "id"=>"26"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = $1 AND "items"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:39:in `update'
+  [1m[36mPreOrderedSite Load (0.4ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."name" = $1 LIMIT $2[0m  [["name", "Amazon"], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:44:in `update'
+[31mUnpermitted parameter: :pre_ordered_site_name. Context: { controller: ItemsController, action: update, request: #<ActionDispatch::Request:0x0000ffff7e274420>, params: {"_method"=>"patch", "authenticity_token"=>"[FILTERED]", "item"=>{"name"=>"ブルーレイ", "pre_ordered_site_name"=>"Amazon", "release_date"=>"2025-03-01", "pre_ordered_date"=>"2024-12-01", "price"=>"8000.0", "note"=>"特典付き豪華版"}, "commit"=>"保存する", "controller"=>"items", "action"=>"update", "id"=>"26"} }[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ app/controllers/items_controller.rb:48:in `update'
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:48:in `update'
+  [1m[36mItem Update (1.0ms)[0m  [1m[33mUPDATE "items" SET "release_date" = $1, "updated_at" = $2 WHERE "items"."id" = $3[0m  [["release_date", "2025-03-01 00:00:00"], ["updated_at", "2025-01-03 22:00:12.422777"], ["id", 26]]
+  ↳ app/controllers/items_controller.rb:48:in `update'
+  [1m[36mTRANSACTION (1.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ app/controllers/items_controller.rb:48:in `update'
+Redirected to http://localhost:3000/items/26
+Completed 302 Found in 26ms (ActiveRecord: 3.7ms (5 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/items/26" for 192.168.65.1 at 2025-01-03 22:00:12 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ItemsController#show as TURBO_STREAM
+  Parameters: {"id"=>"26"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."id" = $1 LIMIT $2[0m  [["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:14:in `show'
+  Rendering layout layouts/application.html.erb
+  Rendering items/show.html.erb within layouts/application
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/views/items/show.html.erb:10
+  Rendered items/show.html.erb within layouts/application (Duration: 2.9ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 4.6ms | GC: 0.0ms)
+Completed 200 OK in 11ms (Views: 5.0ms | ActiveRecord: 0.4ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+Started GET "/items/26/edit" for 192.168.65.1 at 2025-01-03 22:00:15 +0900
+Cannot render console from 192.168.65.1! Allowed networks: 127.0.0.0/127.255.255.255, ::1
+Processing by ItemsController#edit as HTML
+  Parameters: {"id"=>"26"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mItem Load (0.2ms)[0m  [1m[34mSELECT "items".* FROM "items" WHERE "items"."user_id" = $1 AND "items"."id" = $2 LIMIT $3[0m  [["user_id", 1], ["id", 26], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:34:in `edit'
+  [1m[36mPreOrderedSite Load (0.1ms)[0m  [1m[34mSELECT "pre_ordered_sites".* FROM "pre_ordered_sites" WHERE "pre_ordered_sites"."id" = $1 LIMIT $2[0m  [["id", 11], ["LIMIT", 1]]
+  ↳ app/controllers/items_controller.rb:35:in `edit'
+  Rendering layout layouts/application.html.erb
+  Rendering items/edit.html.erb within layouts/application
+  Rendered items/edit.html.erb within layouts/application (Duration: 1.6ms | GC: 0.0ms)
+  Rendered shared/_header.html.erb (Duration: 0.1ms | GC: 0.0ms)
+  Rendered shared/_footer.html.erb (Duration: 0.0ms | GC: 0.0ms)
+  Rendered layout layouts/application.html.erb (Duration: 3.1ms | GC: 0.0ms)
+Completed 200 OK in 16ms (Views: 3.6ms | ActiveRecord: 0.4ms (3 queries, 0 cached) | GC: 0.0ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (66.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_development"[0m
+  [1m[35m (76.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_test"[0m
+  [1m[35m (273.7ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  [1m[35m (40.2ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (1.0ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-01-05 21:07:20.371201', '2025-01-05 21:07:20.371202') RETURNING "key"[0m
+Migrating to SorceryCore (20241231085307)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.1ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "crypted_password" character varying, "salt" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241231085307') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateItems (20250101100001)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.9ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "name" character varying NOT NULL, "pre_ordered_site_id" integer NOT NULL, "pre_ordered_date" timestamp(6), "release_date" timestamp(6), "price" decimal, "note" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" bigint, CONSTRAINT "fk_rails_d4b6334db2"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_items_on_user_id" ON "items" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250101100001') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePreOrderedSites (20250101100319)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.5ms)[0m  [1m[35mCREATE TABLE "pre_ordered_sites" ("id" bigserial primary key, "name" character varying, "url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_pre_ordered_sites_on_name" ON "pre_ordered_sites" ("name")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250101100319') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.8ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPreOrderedSiteToItems (20250101100833)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.4ms)[0m  [1m[35mALTER TABLE "items" ADD "pre_ordered_site_id" bigint NOT NULL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.1ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (78.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_development"[0m
+  [1m[35m (29.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS "myapp_test"[0m
+  [1m[35m (47.6ms)[0m  [1m[35mCREATE DATABASE "myapp_development" ENCODING = 'unicode'[0m
+  [1m[35m (36.8ms)[0m  [1m[35mCREATE DATABASE "myapp_test" ENCODING = 'unicode'[0m
+  [1m[35m (1.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying NOT NULL PRIMARY KEY, "value" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ('environment', 'development', '2025-01-05 21:11:12.528632', '2025-01-05 21:11:12.528633') RETURNING "key"[0m
+Migrating to SorceryCore (20241231085307)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.2ms)[0m  [1m[35mCREATE TABLE "users" ("id" bigserial primary key, "email" character varying NOT NULL, "crypted_password" character varying, "salt" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_users_on_email" ON "users" ("email")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20241231085307') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreateItems (20250101100001)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (1.8ms)[0m  [1m[35mCREATE TABLE "items" ("id" bigserial primary key, "name" character varying NOT NULL, "pre_ordered_site_id" integer NOT NULL, "pre_ordered_date" timestamp(6), "release_date" timestamp(6), "price" decimal, "note" text, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL, "user_id" bigint, CONSTRAINT "fk_rails_d4b6334db2"
+FOREIGN KEY ("user_id")
+  REFERENCES "users" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE INDEX "index_items_on_user_id" ON "items" ("user_id")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250101100001') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mCOMMIT[0m
+Migrating to CreatePreOrderedSites (20250101100319)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.8ms)[0m  [1m[35mCREATE TABLE "pre_ordered_sites" ("id" bigserial primary key, "name" character varying, "url" character varying, "created_at" timestamp(6) NOT NULL, "updated_at" timestamp(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE UNIQUE INDEX "index_pre_ordered_sites_on_name" ON "pre_ordered_sites" ("name")[0m
+  [1m[36mActiveRecord::SchemaMigration Create (0.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ('20250101100319') RETURNING "version"[0m
+  [1m[36mTRANSACTION (0.4ms)[0m  [1m[35mCOMMIT[0m
+Migrating to AddPreOrderedSiteToItems (20250101100833)
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (2.0ms)[0m  [1m[35mALTER TABLE "items" ADD "pre_ordered_site_id" bigint NOT NULL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mTRANSACTION (1.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (3.2ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" IS NULL LIMIT $1[0m  [["LIMIT", 1]]
+  [1m[36mTRANSACTION (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mTRANSACTION (0.7ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists? (2.8ms)[0m  [1m[34mSELECT 1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "subaruya@example.com"], ["LIMIT", 1]]
+  [1m[36mUser Create (1.8ms)[0m  [1m[32mINSERT INTO "users" ("email", "crypted_password", "salt", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "subaruya@example.com"], ["crypted_password", "$2a$10$m.m7RVs6RTK/ck4TyaNHrOjUzh/LLlROIJET2PB/ilNA888FNKbhW"], ["salt", "681o8bzmggZcHWbY_zJN"], ["created_at", "2025-01-05 22:17:03.764913"], ["updated_at", "2025-01-05 22:17:03.764913"]]
+  [1m[36mTRANSACTION (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" /* loading for pp */ LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Ids (1.6ms)[0m  [1m[34mSELECT "users"."id" FROM "users"[0m
+  [1m[36mUser Ids (0.4ms)[0m  [1m[34mSELECT "users"."id" FROM "users"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+Migrating to AddPreOrderedSiteToItems (20250101100833)
+  [1m[36mTRANSACTION (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (3.2ms)[0m  [1m[35mALTER TABLE "items" ADD "pre_ordered_site_id" bigint NOT NULL[0m
+  [1m[36mTRANSACTION (0.1ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT pg_try_advisory_lock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT * FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 ORDER BY "ar_internal_metadata"."key" ASC LIMIT 1[0m  [[nil, "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(7864839756650184315)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
