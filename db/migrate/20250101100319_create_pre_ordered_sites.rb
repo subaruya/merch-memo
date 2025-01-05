@@ -5,6 +5,8 @@ class CreatePreOrderedSites < ActiveRecord::Migration[7.2]
       t.string :url
 
       t.timestamps
+
+      t.reference :items, null: false, foreign_key: true
     end
     add_index :pre_ordered_sites, :name, unique: true
   end
