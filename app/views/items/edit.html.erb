@@ -8,8 +8,11 @@
     <section>
       <h3><%= f.label '予約サイト' %></h3>
       <%= f.text_field :pre_ordered_site_name, value: @pre_ordered_site_name || @item.pre_ordered_site.name %><span>必須</span>
-  </section>
-  
+    </section>
+    <section>
+      <h3><%= f.label :url, 'URL' %></h3>
+      <%= f.text_field :url %>
+    </section>
     <section>
       <h3><%= f.label '発売予定日' %></h3>
       <%= f.date_field :release_date %>

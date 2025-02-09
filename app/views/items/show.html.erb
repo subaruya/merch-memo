@@ -10,6 +10,10 @@
     <%= @item.pre_ordered_site.name %>
   </section>
   <section>
+    <h3>URL</h3>
+    <%= link_to @item.url, @item.url, target: "_blank", rel: "noopener" %>
+  </section>
+  <section>
     <h3>発売予定日</h3>
     <%= @item.formatted_release_date || '未登録' %>
   </section>

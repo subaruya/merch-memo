@@ -64,7 +64,7 @@ class ItemsController < ApplicationController
   private
 
   def item_params
-    params.require(:item).permit(:name, :pre_ordered_date, :release_date, :price, :note)
+    params.require(:item).permit(:name, :pre_ordered_date, :release_date, :price, :note, :url)
           .merge(price: params[:item][:price].gsub(",", "").to_i)
   end  
 end
